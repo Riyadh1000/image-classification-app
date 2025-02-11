@@ -38,7 +38,7 @@ def test_inference_on_image():
     response = requests.get(url)
     image = Image.open(BytesIO(response.content)).convert("RGB")
 
-    # Применяем те же самые трансформации
+    # Применяем те же самые трансформации.
     preprocess = get_preprocess_transform()
     image_tensor = preprocess(image).unsqueeze(0)  # [1, 3, 224, 224]
 
